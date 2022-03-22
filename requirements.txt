@@ -1,0 +1,10 @@
+augly=0.2.1
+numpy=1.21.2
+pandas=1.4.1
+pillow=9.0.1
+pytorch=1.10.2
+scipy=1.8.0
+timm=0.5.4
+torchaudio=0.10.2
+torchvision=0.11.3
+tqdm=4.63.0
