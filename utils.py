@@ -38,9 +38,9 @@ def build_backbone(path, name):
     model.fc = nn.Identity()
     if path is not None:
         if path.startswith("http"):
-            checkpoint = torch.hub.load_state_dict_from_url(path, progress=False)
+            checkpoint = torch.hub.load_state_dict_from_url(path, progress=False, map_location=device)
         else:
-            checkpoint = torch.load(path)
+            checkpoint = torch.load(path, map_location=device)
         state_dict = checkpoint
         for ckpt_key in ['state_dict', 'model_state_dict', 'teacher']:
             if ckpt_key in checkpoint:
@@ -60,7 +60,7 @@ def get_linear_layer(weight, bias):
 
 def load_normalization_layer(path, mode='whitening'):
     """ Loads the normalization layer from a checkpoint and returns the layer. """
-    checkpoint = torch.load(path)
+    checkpoint = torch.load(path, map_location=device)
     if mode=='whitening':
         # if PCA whitening is used scale the feature by the dimension of the latent space
         D = checkpoint['weight'].shape[1] 

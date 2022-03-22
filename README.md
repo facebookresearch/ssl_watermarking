@@ -46,13 +46,14 @@ pip install -r requirements.txt
 This codebase has been developed with python version 3.8, PyTorch version 1.10.2, CUDA 10.2 and torchvision 0.11.3.
 The following considers `ssl_watermarking/` as the root folder, all paths are relative to it.
 
+PS: [Trouble shooting for Augly](https://adobe-research.github.io/beacon-aug/trouble%20shooting.html)
 
 ## Images
 
 You are free to use **your own images**.  
 Images to be watermarked must be put in a folder of the form `<name/of/folder>/0/` for the dataloader to work. 
 The image folder can be put on the `ssl_watermarking` folder, or in any other place, you will later need to specify the path to the folder by the argument `--data_dir <name/of/folder>`.  
-We already provide 8 images in the `input` folder, from the [INRIA Holidays dataset](http://lear.inrialpes.fr/~jegou/data.php#holidays).
+We already provide 8 high-resolution-images in the `input` folder, from the [INRIA Holidays dataset](http://lear.inrialpes.fr/~jegou/data.php#holidays).
 
 :warning: If images are too high resolution, an out-of-memory error might appear, you can try to resize your images beforehand.
 
@@ -229,7 +230,7 @@ You will need to download them and extract 1k images from them (except CLIC that
 
 You also need to download the model and normalization layer weights (see [Pretrained models & normalization layers](#model)).
 
-PS: The overlay onto screenshot transform (from Augly) that is used in the paper is the mobile version (Augly's default: web). To change it, you need to locate the file `augly/utils/base_paths.py` (run `pip show augly` to locate the Augly library). Then change the line "TEMPLATE_PATH = os.path.join(SCREENSHOT_TEMPLATES_DIR, "web.png")" to "TEMPLATE_PATH = os.path.join(SCREENSHOT_TEMPLATES_DIR, "mobile.png")".
+Remark: The overlay onto screenshot transform (from Augly) that is used in the paper is the mobile version (Augly's default: web). To change it, you need to locate the file `augly/utils/base_paths.py` (run `pip show augly` to locate the Augly library). Then change the line "TEMPLATE_PATH = os.path.join(SCREENSHOT_TEMPLATES_DIR, "web.png")" to "TEMPLATE_PATH = os.path.join(SCREENSHOT_TEMPLATES_DIR, "mobile.png")".
 
 ### Table 1: TPR for 0-bit watermarking
 You will need to run:
