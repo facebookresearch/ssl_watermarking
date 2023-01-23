@@ -15,7 +15,7 @@ If you find this repository useful, please consider giving a star :star: and ple
 }
 ```
 
-[[`Webpage`](https://pierrefdz.github.io/publications/wissls/)]
+[[`Webpage`](https://pierrefdz.github.io/publications/sslwatermarking/)]
 [[`arXiv`](https://arxiv.org/abs/2112.09581)] 
 [[`Spaces`](https://huggingface.co/spaces/pierrefdz/ssl_watermarking)] 
 [[`Colab`](https://colab.research.google.com/github/facebookresearch/ssl_watermarking/blob/master/notebooks/colab.ipynb)] 
